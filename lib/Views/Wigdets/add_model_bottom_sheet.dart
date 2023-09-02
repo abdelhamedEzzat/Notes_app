@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Views/Wigdets/custom_text_filed.dart';
+import 'package:notes_app/Views/Wigdets/custom_Text_Filed.dart';
 import 'package:notes_app/Views/Wigdets/custom_bottom.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
