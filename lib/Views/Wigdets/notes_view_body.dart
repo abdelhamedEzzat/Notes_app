@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Views/Wigdets/Custom_appbar.dart';
+import 'package:notes_app/Views/Wigdets/custom_app_bar.dart';
 
 import 'package:notes_app/Views/Wigdets/notes_list_view.dart';
 import 'package:notes_app/Views/edit_notes.dart';
