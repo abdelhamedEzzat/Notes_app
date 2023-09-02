@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Views/Wigdets/custom_search_icon.dart';
-import 'package:notes_app/Views/Wigdets/note_Items.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -8,7 +7,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+      padding: EdgeInsets.symmetric(vertical: 18),
       child: SafeArea(
         child: Column(
           children: [
@@ -22,7 +21,6 @@ class CustomAppBar extends StatelessWidget {
                 CustomSearchIcon(),
               ],
             ),
-            NoteItem()
           ],
         ),
       ),
