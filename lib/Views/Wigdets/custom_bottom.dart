@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Views/Wigdets/constant.dart';
+import 'package:notes_app/Views/constant.dart';
 
 class CustomBottom extends StatelessWidget {
   const CustomBottom({super.key});
@@ -9,7 +9,7 @@ class CustomBottom extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: KprimaryColor,
+        color: kprimaryColor,
       ),
       width: MediaQuery.of(context).size.width,
       child: MaterialButton(
@@ -17,7 +17,8 @@ class CustomBottom extends StatelessWidget {
         child: const Center(
             child: Text(
           "Add",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
         )),
       ),
     );

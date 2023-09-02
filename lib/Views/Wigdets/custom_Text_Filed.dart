@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/Views/Wigdets/constant.dart';
+import 'package:notes_app/Views/constant.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({super.key, required this.hint, this.maxLine = 1});
@@ -9,18 +9,18 @@ class CustomTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
         maxLines: maxLine,
-        cursorColor: KprimaryColor,
+        cursorColor: kprimaryColor,
         decoration: InputDecoration(
             hintText: hint,
             hintStyle: const TextStyle(
-              color: KprimaryColor,
+              color: kprimaryColor,
             ),
             border: buildBorder(),
             enabledBorder: buildBorder(),
-            focusedBorder: buildBorder(KprimaryColor)));
+            focusedBorder: buildBorder(kprimaryColor)));
   }
 
   OutlineInputBorder buildBorder([color]) => OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: color ?? Colors.white));
 }
