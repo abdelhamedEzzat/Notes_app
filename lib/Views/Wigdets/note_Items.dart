@@ -27,7 +27,7 @@ class NoteItem extends StatelessWidget {
           subtitle: Text(
             "build your Career With Abdelhameed Ezzat",
             style:
-                TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 20),
+                TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 18),
           ),
           trailing: IconButton(
               onPressed: () {},
@@ -37,7 +37,7 @@ class NoteItem extends StatelessWidget {
               )),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 16, right: 16),
+          padding: const EdgeInsets.only(top: 14, right: 16),
           child: Text(
             "may21 , 2022",
             style:
