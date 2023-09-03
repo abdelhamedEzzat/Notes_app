@@ -7,7 +7,7 @@ class EditNotesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
         child: Padding(
       padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -16,11 +16,30 @@ class EditNotesViewBody extends StatelessWidget {
             title: "Edit Notes",
             icon: Icons.check,
           ),
-          CustomTextFiled(hint: "Title"),
+          CustomTextFiled(
+            hint: "Title",
+            validator: (value) {
+              if (value?.isEmpty ?? true) {
+                return "Field is Required";
+              } else {
+                return null;
+              }
+            },
+          ),
           SizedBox(
             height: 16,
           ),
-          CustomTextFiled(hint: "Content", maxLine: 5),
+          CustomTextFiled(
+            hint: "Content",
+            maxLine: 5,
+            validator: (value) {
+              if (value?.isEmpty ?? true) {
+                return "Field is Required";
+              } else {
+                return null;
+              }
+            },
+          ),
         ],
       ),
     ));
