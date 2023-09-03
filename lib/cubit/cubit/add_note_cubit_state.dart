@@ -5,11 +5,11 @@ sealed class AddNoteCubitState {}
 
 final class AddNoteCubitInitial extends AddNoteCubitState {}
 
-class AddNoteLoading extends AddNoteCubitCubit {}
+class AddNoteLoading extends AddNoteCubitState {}
 
-class AddNoteSuccess extends AddNoteCubitCubit {}
+class AddNoteSuccess extends AddNoteCubitState {}
 
-class AddNoteFailed extends AddNoteCubitCubit {
+class AddNoteFailed extends AddNoteCubitState {
   final String errorMassge;
 
   AddNoteFailed(this.errorMassge);
