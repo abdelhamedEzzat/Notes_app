@@ -67,8 +67,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
               return CustomBottom(
                 isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
-                  print(title);
-                  print(subTitle);
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     var noteModel = NoteModel(
