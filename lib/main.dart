@@ -5,6 +5,7 @@ import 'package:notes_app/Views/constant.dart';
 
 import 'package:notes_app/Views/notes_view.dart';
 import 'package:notes_app/add_bloc_obs/simple_bloc_observer.dart';
+import 'package:notes_app/cubits/notes/cubit/notes_cubit.dart';
 
 import 'package:notes_app/model/note_model.dart';
 
@@ -22,19 +23,16 @@ class AppNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // MultiBlocProvider(
-        //     providers: [
-        //       BlocProvider(
-        //         create: (context) => AddNoteCubitCubit(),
-        //       )
-        //     ],
-        // child:
-        MaterialApp(
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => NotesCubit(),
+          )
+        ],
+        child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme:
                 ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-            home: const NotesView());
-    //);
+            home: const NotesView()));
   }
 }
