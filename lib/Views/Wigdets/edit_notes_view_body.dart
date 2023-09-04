@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:notes_app/Views/Wigdets/custom_Text_Filed.dart';
 import 'package:notes_app/Views/Wigdets/custom_app_bar.dart';
+import 'package:notes_app/Views/Wigdets/edit_note_color_list.dart';
 import 'package:notes_app/cubits/notes/cubit/notes_cubit.dart';
 import 'package:notes_app/model/note_model.dart';
 
@@ -53,7 +54,7 @@ class _EditNotesViewBodyState extends State<EditNotesViewBody> {
               }
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           CustomTextFiled(
@@ -70,6 +71,12 @@ class _EditNotesViewBodyState extends State<EditNotesViewBody> {
               }
             },
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          EditNoteColorList(
+            editNoteColor: widget.noteEditView,
+          )
         ],
       ),
     ));
