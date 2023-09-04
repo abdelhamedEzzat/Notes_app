@@ -1,50 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/Views/edit_notes.dart';
 
-class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+import 'package:notes_app/model/note_model.dart';
 
+class NotesItem extends StatelessWidget {
+  const NotesItem({
+    Key? key,
+    required this.notesData,
+  }) : super(key: key);
+
+  final NoteModel notesData;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: const Color(0xffffcd79),
-          borderRadius: BorderRadius.circular(16)),
-      padding: const EdgeInsets.only(
-        top: 24,
-        bottom: 24,
-        left: 16,
-      ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        ListTile(
-          title: const Padding(
-            padding: EdgeInsets.only(bottom: 16),
-            child: Text(
-              "Flutter Tips",
-              style: TextStyle(color: Colors.black, fontSize: 26),
-            ),
-          ),
-          subtitle: Text(
-            "build your Career With Abdelhameed Ezzat",
-            style:
-                TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 18),
-          ),
-          trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                FontAwesomeIcons.trash,
-                color: Colors.black,
-              )),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return EditNotesView();
+          }),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: const Color(0xffffcd79),
+            borderRadius: BorderRadius.circular(16)),
+        padding: const EdgeInsets.only(
+          top: 24,
+          bottom: 24,
+          left: 16,
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 14, right: 16),
-          child: Text(
-            "may21 , 2022",
-            style:
-                TextStyle(color: Colors.black.withOpacity(0.4), fontSize: 14),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+          ListTile(
+            title: Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Text(
+                notesData.title,
+                style: const TextStyle(color: Colors.black, fontSize: 26),
+              ),
+            ),
+            subtitle: Text(
+              notesData.subTitle,
+              style:
+                  TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 18),
+            ),
+            trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  FontAwesomeIcons.trash,
+                  color: Colors.black,
+                )),
           ),
-        )
-      ]),
+          Padding(
+            padding: const EdgeInsets.only(top: 14, right: 16),
+            child: Text(
+              notesData.date,
+              style:
+                  TextStyle(color: Colors.black.withOpacity(0.4), fontSize: 14),
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

@@ -5,7 +5,9 @@ import 'package:notes_app/Views/Wigdets/notes_view_body.dart';
 import 'package:notes_app/cubits/notes/cubit/notes_cubit.dart';
 
 class NotesView extends StatelessWidget {
-  const NotesView({super.key});
+  const NotesView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
